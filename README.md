@@ -56,6 +56,21 @@ A simple Classic ASP web application that demonstrates user authentication, role
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Index Page
+![Index Page](assets/index.png)
+
+### 👤 Login Page
+![Login Page](assets/login.png)
+
+### ✅ Logged In View
+![Logged In](assets/loggedIn.png)
+
+### 📝 Registration Page
+![Register Page](assets/register.png)
 ## ✅ Status
+
+---
 
 This project is complete as a basic user authentication and authorization system. Additional features such as password reset, user profile management, and admin dashboards can be built on top of it.

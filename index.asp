@@ -7,6 +7,7 @@ userRole = Request.Cookies("role")
 
 <html>
     <head>
+        <link rel="stylesheet" href="./css/style.css">
         <title>Home</title>
     </head>
     <body>
