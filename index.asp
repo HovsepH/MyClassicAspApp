@@ -19,6 +19,10 @@ userRole = Request.Cookies("role")
         <form action="logout/logout.asp" method="post">
             <input type="submit" value="Logout">
         </form>
+
+        <form action="weather.asp" method="get">
+            <input type="submit" value="Check weather">
+        </form>
     <% Else %>
         <h2>Welcome to My Classic ASP Project</h2>
         

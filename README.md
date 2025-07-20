@@ -1,6 +1,6 @@
 ﻿# MyClassicAspApp
 
-A simple Classic ASP web application that demonstrates user authentication, role-based access control, and integration with a Microsoft SQL Server database.
+A simple Classic ASP web application featuring user authentication, role-based access control, Microsoft SQL Server integration, and real-time weather display using an external API.
 
 ---
 
@@ -61,14 +61,18 @@ A simple Classic ASP web application that demonstrates user authentication, role
 ### 🏠 Index Page
 ![Index Page](assets/index.png)
 
+### 📝 Registration Page
+![Register Page](assets/register.png)
+
 ### 👤 Login Page
 ![Login Page](assets/login.png)
 
 ### ✅ Logged In View
 ![Logged In](assets/loggedIn.png)
 
-### 📝 Registration Page
-![Register Page](assets/register.png)
+### ✅ Check weather In View
+![Logged In](assets/weather.png)
+
 ## ✅ Status
 
 ---
