@@ -1,3 +1,6 @@
+<%@ LCID=1033 %>
+<!--#include virtual="/MyClassicAspApp/helpers/jsonObject.class.asp"-->
+
 <html>
 <head>
     <title>Weather</title>
@@ -23,21 +26,20 @@
         url = "http://api.weatherapi.com/v1/forecast.json?key=8e76a50efb3a4447a0a195632242309&q=" & city & "&days=" & days
 
         if city <> "" then
-            Dim http, response, status, tempC, condition, icon, errorCode, errorMessage
+            Dim http, response, status, tempC, condition, icon, errorCode, errorMessage, JSON
 
             Set http = Server.CreateObject("MSXML2.XMLHTTP")
             http.Open "Get", url, False
             http.Send
             response = http.responseText
             status = http.Status
+            Set JSON = New JSONobject
+            JSON.Parse(response)
             Set http = Nothing
 
             If status <> 200 Then
-                 errorCode = Mid(response, InStr(response, """code"":") + 7)
-                errorCode = Left(errorCode, InStr(errorCode, ",") - 1)
-
-                errorMessage = Mid(response, InStr(response, """message"":""") + 11)
-                errorMessage = Left(errorMessage, InStr(errorMessage, """") - 1)
+                errorCode = JSON("error")("code")
+                errorMessage = JSON("error")("message")
 
                 Response.Write "<div class='error'>"
                 Response.Write "<h3>Weather API Error</h3>"
@@ -45,14 +47,9 @@
                 Response.Write "<p><strong>Message:</strong> " & errorMessage & "</p>"
                 Response.Write "</div>"
             Else
-                tempC = Mid(response, InStr(response, """temp_c"":") + 9)
-                tempC = Left(tempC, InStr(tempC, ",") - 1)
-
-                 condition = Mid(response, InStr(response, """text"":""") + 8)
-                condition = Left(condition, InStr(condition, """") - 1)
-
-                icon = Mid(response, InStr(response, """icon"":""") + 8)
-                icon = Left(icon, InStr(icon, """") - 1)
+                tempC = JSON("current")("temp_c")
+                condition = JSON("current")("condition")("text")
+                icon = JSON("current")("condition")("icon")
 
                 Response.Write "<div class='weather-result'>"
                 Response.Write "<h3>Weather in " & city & ":</h3>"
