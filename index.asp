@@ -1,4 +1,6 @@
 <%@ Language="VBScript" %>
+<%@ LCID=1033 %>
+
 <% 
 dim username, userRole
 username= Request.Cookies("username")

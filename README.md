@@ -8,6 +8,7 @@ A simple Classic ASP web application featuring user authentication, role-based a
 
 - **`sql/00_create_db.sql`** – Contains the initial SQL script to create and configure the database schema.
 - **`helpers/Crypto.Class.asp`** – Used for secure password hashing (borrowed from [as08/ClassicASP.PasswordHashing](https://github.com/as08/ClassicASP.PasswordHashing)).
+- **`helpers/jsonObject.class.asp`** – Used for parsing JSON responses (borrowed from [rcdmk/aspJSON](https://github.com/rcdmk/aspJSON)).
 - **`register/`, `login/`, `logout/`** – User registration, login, and logout logic.
 - **`services/`** – Application services such as user and role handling.
 - **`helpers/dbHelpers.asp`** – Generic database connection and query helper functions.
